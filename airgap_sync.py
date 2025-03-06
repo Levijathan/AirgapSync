@@ -41,6 +41,19 @@ DATABASE_CONFIG = {
 }
 # --- End Configuration ---
 
+def ascii_art():
+    """Prints ASCII art for Airgap Sync."""
+    print(r"""
+ _______ _________ _______  _______  _______  _______    _______           _        _______ 
+(  ___  )\__   __/(  ____ )(  ____ \(  ___  )(  ____ )  (  ____ \|\     /|( (    /|(  ____ \
+| (   ) |   ) (   | (    )|| (    \/| (   ) || (    )|  | (    \/( \   / )|  \  ( || (    \/
+| (___) |   | |   | (____)|| |      | (___) || (____)|  | (_____  \ (_) / |   \ | || |      
+|  ___  |   | |   |     __)| | ____ |  ___  ||  _____)  (_____  )  \   /  | (\ \) || |      
+| (   ) |   | |   | (\ (   | | \_  )| (   ) || (              ) |   ) (   | | \   || |      
+| )   ( |___) (___| ) \ \__| (___) || )   ( || )        /\____) |   | |   | )  \  || (____/\
+|/     \|\_______/|/   \__/(_______)|/     \||/         \_______)   \_/   |/    )_)(_______/
+    """)
+
 
 def test_database_connection(db_config):
     """Tests the database connection using the provided configuration."""
@@ -122,7 +135,7 @@ def add_feed_to_db(feed_name, feed_url, source_format, db_config):
 
 
 def main():
-    print("--- Airgap Intel Feed Database Integration Script ---")
+    ascii_art()
     
     success, error_message = test_database_connection(DATABASE_CONFIG)
     if not success:
